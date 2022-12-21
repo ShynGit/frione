@@ -50,14 +50,14 @@ const SignIn = () => {
                         className="px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px]"
                         placeholder="Password"
                     />
-                    <div className="submit-button py-2 text-sm font-semibold">
+                    <div className="submit-button py-2 text-sm font-semibold cursor-pointer">
                         Sign in
                     </div>
                     <div className="text-xs flex justify-center gap-1">
                         <p>Don't have an account?</p>
                         <Link
                             to="/sign-up"
-                            className="text-[#2CA4E8] hover:cursor-pointer hover:text-sky-400"
+                            className="text-[#2CA4E8] cursor-pointer hover:text-sky-400"
                         >
                             Sign up
                         </Link>

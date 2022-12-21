@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImages } from "@fortawesome/free-regular-svg-icons";
+import { useState } from "react";
 
 const SignUp = () => {
+    const [image, setImage] = useState<File>();
+    console.log(image);
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("file").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src =
+                oFREvent.target.result;
+        };
+    }
+    if (image) PreviewImage();
+
     return (
         <div
             className="min-w-screen min-h-screen w-screen h-screen text-white relative flex justify-center items-center"
@@ -54,14 +70,36 @@ const SignUp = () => {
                         className="px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px]"
                         placeholder="Password"
                     />
-                    <div className="submit-button py-2 text-sm font-semibold">
+                    <input
+                        type="file"
+                        id="file"
+                        className="hidden px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px]"
+                        accept="image/*"
+                        onChange={(e) => setImage(e.target.files?.[0])}
+                    />
+
+                    <label
+                        htmlFor="file"
+                        className="flex gap-2 items-center text-xs ml-2 cursor-pointer"
+                    >
+                        {image && (
+                            <img
+                                id="uploadPreview"
+                                className="w-10 h-10 object-cover rounded-full border"
+                            />
+                        )}
+                        <FontAwesomeIcon icon={faImages} className="w-7 h-7" />
+                        <p>Add an avatar</p>
+                    </label>
+
+                    <div className="submit-button py-2 text-sm font-semibold cursor-pointer">
                         Sign up
                     </div>
                     <div className="text-xs flex justify-center gap-1">
                         <p>Have an account?</p>
                         <Link
                             to="/sign-in"
-                            className="text-[#2CA4E8] hover:cursor-pointer hover:text-sky-400"
+                            className="text-[#2CA4E8] cursor-pointer hover:text-sky-400"
                         >
                             Sign in
                         </Link>
