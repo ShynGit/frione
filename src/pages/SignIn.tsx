@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SignIn = () => {
     return (
         <div
-            className="min-w-screen min-h-screen w-screen h-screen text-white relative flex justify-center items-center"
+            className="min-w-screen min-h-screen w-screen h-screen text-white relative flex justify-center items-center overflow-hidden"
             style={{
                 background:
                     "linear-gradient(69.03deg, rgba(15, 12, 41, 0.87) 0.43%, rgba(48, 43, 99, 0.91) 46.11%, rgba(36, 36, 62, 0.91) 93.72%)",
@@ -42,12 +42,12 @@ const SignIn = () => {
                 <form className="flex flex-col gap-4">
                     <input
                         type="email"
-                        className="px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px]"
+                        className="px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px] bg-white"
                         placeholder="Email"
                     />
                     <input
                         type="password"
-                        className="px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px]"
+                        className="px-4 py-3 outline-none text-sm text-[#302B63] font-semibold rounded-[10px] bg-white"
                         placeholder="Password"
                     />
                     <div className="submit-button py-2 text-sm font-semibold cursor-pointer">
