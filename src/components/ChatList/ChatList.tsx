@@ -1,7 +1,7 @@
 const ChatList = () => {
     return (
         <div
-            className="flex flex-col mt-6 px-3 h-[67vh] overflow-y-scroll scrollBar"
+            className="flex flex-col mt-6 px-3 h-[65vh] overflow-y-scroll scrollBar"
             id="style-1"
         >
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((chat) => (
@@ -17,7 +17,7 @@ const ChatList = () => {
                     />
                     <div className="flex flex-col justify-center items-start">
                         <div className="font-bold text-lg">Name</div>
-                        <div className="text-sm text-[#9CA8C9]">
+                        <div className="text-[13.6px] text-[#9CA8C9]/70 font-semibold">
                             Last message
                         </div>
                     </div>

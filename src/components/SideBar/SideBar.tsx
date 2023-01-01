@@ -63,7 +63,7 @@ const SideBar = ({ openSideBar, setOpenSideBar }: Props) => {
                     <input
                         type="text"
                         name="search"
-                        className="bg-transparent outline-none"
+                        className="bg-transparent outline-none font-semibold"
                         placeholder="Find..."
                     />
                 </div>

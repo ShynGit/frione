@@ -7,6 +7,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 import chatBoxBG from "../../assets/ChatBoxBG.jpg";
+import Input from "../Input/Input";
+import Messages from "../Messages/Messages";
 interface Props {
     setOpenSideBar: React.Dispatch<React.SetStateAction<Boolean>>;
 }
@@ -33,8 +35,9 @@ const BoxChat = ({ setOpenSideBar }: Props) => {
             <div
                 className="flex py-5 px-7 items-center justify-between"
                 style={{
-                    background: "rgba(255, 255, 255, 0.5)",
+                    background: "rgba(255, 255, 255, 0.4)",
                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                    backdropFilter: "blur(2px)",
                 }}
             >
                 <div className="flex items-center">
@@ -73,10 +76,12 @@ const BoxChat = ({ setOpenSideBar }: Props) => {
             </div>
             <div className="">
                 <div
-                    className="h-[85vh] BoxScroll overflow-y-scroll font-medium"
+                    className="h-[80vh] BoxScroll overflow-y-scroll font-medium p-4"
                     id="style-1"
-                ></div>
-                <div className="absolute bottom-0 ">Input bar</div>
+                >
+                    <Messages />
+                </div>
+                <Input />
             </div>
         </div>
     );
